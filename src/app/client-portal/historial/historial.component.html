@@ -1,0 +1,33 @@
+<div class="historial-wrapper">
+  <h2>Empresa de Soporte Técnico</h2>
+  <h3>Historial De Servicios Adquiridos</h3>
+
+  <table class="tabla-servicios">
+    <thead>
+      <tr>
+        <th>Código</th>
+        <th>Fecha</th>
+        <th>Hora</th>
+        <th>Distrito</th>
+        <th>Dirección</th>
+        <th>Monto</th>
+        <th>Observación</th>
+        <th>Acción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>001</td>
+        <td>22/06/2026</td>
+        <td>08:00 - 10:00</td>
+        <td>Jesús María</td>
+        <td>Av. Salaverry s/n</td>
+        <td>S/. 150</td>
+        <td>HDD presenta fallos al iniciar el sistema.</td>
+        <td>
+        <button class="btn-ver" [routerLink]="['/historial/detalle', '001']">Ver más</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

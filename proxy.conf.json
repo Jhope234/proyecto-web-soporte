@@ -1,0 +1,9 @@
+{
+  "/modalidades": {
+    "target": "https://spyrocode.dev",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}
+

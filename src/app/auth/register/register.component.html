@@ -1,0 +1,104 @@
+<form #form="ngForm" (ngSubmit)="registrar(form.value)" novalidate>
+  <!-- Nombres -->
+  <div class="mb-3">
+    <label for="nombres" class="form-label">Nombres</label>
+    <input
+      type="text"
+      id="nombres"
+      name="nombres"
+      [(ngModel)]="nombres"
+      class="form-control"
+      placeholder="Ingresa tus nombres"
+      required
+      #nombresCtrl="ngModel"
+    />
+    <div *ngIf="nombresCtrl.invalid && nombresCtrl.touched" class="text-danger small">
+      Este campo es obligatorio.
+    </div>
+  </div>
+
+  <!-- Apellidos -->
+  <div class="mb-3">
+    <label for="apellidos" class="form-label">Apellidos</label>
+    <input
+      type="text"
+      id="apellidos"
+      name="apellidos"
+      [(ngModel)]="apellidos"
+      class="form-control"
+      placeholder="Ingresa tus apellidos"
+      required
+      #apellidosCtrl="ngModel"
+    />
+    <div *ngIf="apellidosCtrl.invalid && apellidosCtrl.touched" class="text-danger small">
+      Este campo es obligatorio.
+    </div>
+  </div>
+
+  <!-- Teléfono -->
+  <div class="mb-3">
+    <label for="telefono" class="form-label">Teléfono</label>
+    <input
+      type="tel"
+      id="telefono"
+      name="telefono"
+      [(ngModel)]="telefono"
+      class="form-control"
+      placeholder="Ej. 987654321"
+      pattern="[0-9]{9}"
+      required
+      #telefonoCtrl="ngModel"
+    />
+    <div *ngIf="telefonoCtrl.invalid && telefonoCtrl.touched" class="text-danger small">
+      Debe contener exactamente 9 dígitos numéricos.
+    </div>
+  </div>
+
+  <!-- Correo -->
+  <div class="mb-3">
+    <label for="correo" class="form-label">Correo electrónico</label>
+    <input
+      type="email"
+      id="correo"
+      name="correo"
+      [(ngModel)]="correo"
+      class="form-control"
+      placeholder="Ej. ejemplo@correo.com"
+      required
+      email
+      #correoCtrl="ngModel"
+    />
+    <div *ngIf="correoCtrl.invalid && correoCtrl.touched" class="text-danger small">
+      Ingresa un correo válido.
+    </div>
+  </div>
+
+  <!-- Contraseña -->
+  <div class="mb-3">
+    <label for="contrasena" class="form-label">Contraseña</label>
+    <input
+      type="password"
+      id="contrasena"
+      name="contrasena"
+      [(ngModel)]="contrasena"
+      class="form-control"
+      placeholder="Crea una contraseña segura"
+      minlength="8"
+      pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[@$!%*?&]).{8,}$"
+      required
+      #passCtrl="ngModel"
+    />
+    <div *ngIf="passCtrl.invalid && passCtrl.touched" class="text-danger small">
+      Mínimo 8 caracteres, con mayúscula, minúscula, número y símbolo.
+    </div>
+  </div>
+
+  <!-- Botón -->
+  <button type="submit" class="btn btn-success w-100" [disabled]="form.invalid">
+    Registrar Cuenta
+  </button>
+
+  <div class="text-center mt-3">
+    <a href="#" class="text-decoration-none" (click)="cambiarVista()">¿Ya tienes cuenta? Inicia sesión</a>
+  </div>
+</form>

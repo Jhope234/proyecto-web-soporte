@@ -1,0 +1,89 @@
+<div class="cita-wrapper">
+  <div class="cita-formulario">
+    <h2>Empresa de Soporte Técnico</h2>
+    <h3>Reserve su Cita para Diagnóstico</h3>
+    <p class="precio">Precio: <strong>S/. 50.00</strong></p>
+
+    <form>
+      <div class="form-grid">
+        <!-- Columna izquierda -->
+        <div class="columna">
+          <div class="campo">
+            <label for="nombres">Nombres</label>
+            <input type="text" id="nombres" placeholder="Ingresa tus nombres" />
+          </div>
+
+          <div class="campo">
+            <label for="apellidos">Apellidos</label>
+            <input type="text" id="apellidos" placeholder="Ingresa tus apellidos" />
+          </div>
+
+          <div class="campo">
+            <label for="dni">DNI/RUC <span class="opcional">(opcional)</span></label>
+            <input type="text" id="dni" placeholder="Ej. 12345678" />
+          </div>
+
+<div class="campo">
+  <label for="modalidad">Modalidad</label>
+  <select id="modalidad">
+    <option value="">Seleccione una opción</option>
+    <option *ngFor="let m of modalidades" [value]="m.id_modalidad">
+      {{ m.nombre_modalidad }}
+    </option>
+  </select>
+</div>
+
+
+
+          <div class="campo">
+            <label for="distrito">Distrito</label>
+            <select id="distrito">
+              <option value="">Seleccione su distrito</option>
+              <option value="SJL">San Juan de Lurigancho</option>
+              <option value="Miraflores">Miraflores</option>
+              <option value="Surco">Surco</option>
+              <option value="Callao">Callao</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Columna derecha -->
+        <div class="columna">
+          <div class="campo">
+            <label for="direccion">Dirección</label>
+            <input type="text" id="direccion" placeholder="Dirección completa" />
+          </div>
+
+          <div class="campo">
+            <label for="fecha">Fecha</label>
+            <input type="date" id="fecha" value="2025-11-05" />
+          </div>
+
+          <div class="campo">
+            <label for="hora">Hora</label>
+            <select id="hora">
+              <option value="">Seleccione una hora</option>
+              <option value="09:00">09:00 AM</option>
+              <option value="10:00">10:00 AM</option>
+              <option value="11:00">11:00 AM</option>
+              <option value="14:00">02:00 PM</option>
+              <option value="15:00">03:00 PM</option>
+            </select>
+          </div>
+
+          <div class="campo">
+            <label for="comentario">Comentario</label>
+            <textarea id="comentario" rows="3" placeholder="Escribe algún detalle adicional..."></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="terminos">
+        <input type="checkbox" id="acepto" />
+        <label for="acepto">Acepto los términos y condiciones</label>
+      </div>
+
+      <button type="submit" class="btn-pagar">Pagar Cita</button>
+    </form>
+  </div>
+</div>

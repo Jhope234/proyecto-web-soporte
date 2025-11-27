@@ -1,0 +1,103 @@
+.historial-wrapper {
+  padding: 40px;
+  background-color: #f0f4f8;
+  min-height: 100vh;
+}
+
+h2 {
+  text-align: center;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+h3 {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.tabla-servicios {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 40px;
+}
+
+.tabla-servicios th,
+.tabla-servicios td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.tabla-servicios th {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-ver {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-ver:hover {
+  background-color: #0056b3;
+}
+
+.form-servicio {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-grid {
+  display: flex;
+  gap: 30px;
+}
+
+.columna {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input,
+select,
+textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.btn-guardar {
+  margin-top: 30px;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-guardar:hover {
+  background-color: #0056b3;
+}

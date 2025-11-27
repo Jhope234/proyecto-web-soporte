@@ -1,0 +1,257 @@
+//Seccion fondo
+.hero-video {
+  height: 100vh;
+  overflow: hidden;
+  position: relative; /* asegura que todo se posicione dentro */
+}
+
+.video-fondo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1; /* el video queda detrás */
+}
+
+.hero-video nav,
+.hero-video .container-fluid {
+  position: relative;
+  z-index: 2; /* navbar y contenido encima del video */
+}
+
+.hero-video h1 {
+  color: #1586f5; /* azul eléctrico */
+}
+
+.hero-video p {
+  color: #f0f8ff; /* blanco suave */
+}
+
+.hero-video .nav-link {
+  color: #f0f8ff !important; /* texto claro en menú */
+  font-weight: 500;
+}
+
+.hero-video .btn-login {
+  background-color: #8A2BE2;
+  color: white;
+}
+
+.hero-video .btn-register {
+  background-color: #1E90FF;
+  color: white;
+}
+
+.hero-video .navbar {
+  backdrop-filter: blur(8px); /* efecto glass suave */
+}
+
+
+
+//Seccion Nosotros
+.modalidades-servicio-cuadros {
+  background: linear-gradient(135deg, #ffffff, #03153a);
+  color: white;
+  padding: 6rem 0;
+}
+
+.cuadro-modalidadesServicio {
+  height: 300px; /* Puedes ajustar este valor según tu diseño */
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+
+.cuadro-modalidadesServicio:hover {
+  transform: scale(1.02);
+}
+
+.texto-cuadro {
+  background-color: rgba(255, 255, 255, 0.05);
+  flex-direction: column;
+  padding: 2rem;
+}
+
+
+.imagen-cuadro {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.imagen-cuadro img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+//Seccion Mision y Vision
+
+.seccion-historia-recetas-menu {
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.bloque-historia {
+  min-height: 400px;
+}
+
+.imagen-historia {
+  background-image: url('https://i.pinimg.com/736x/65/ac/a3/65aca37c01627eabf99a6c6078357e5a.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 80%;        /* ancho más pequeño */
+  height: 300px;     /* altura fija más chica */
+  margin: 0 auto;    /* centrada dentro de su columna */
+  border-radius: 1rem; /* bordes suaves */
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+/* Bloque Recetas */
+.bloque-recetas {
+  background-color: #000;
+  min-height: 400px;
+  position: relative;
+}
+.imagen-recetas {
+  background-image: url('https://www.pinterest.com/pin/38562140552709665/');
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+}
+.titulo-recetas h2 {
+  font-size: 2.8rem;
+  text-shadow: 0 0 10px rgba(0,0,0,0.6);
+}
+
+/* Bloque Menú */
+.bloque-menu {
+  background-color: #03153a;
+  min-height: 400px;
+}
+.bloque-menu img {
+  height: 100%;
+  object-fit: cover;
+}
+.texto-descubre {
+  display: flex;              /* activa flexbox */
+  flex-direction: column;     /* organiza en columna */
+  align-items: flex-end;      /* pega todo al lado derecho */
+  text-align: right;          /* alinea el texto dentro de cada elemento */
+}
+
+.texto-descubre p {
+  max-width: 90%;   /* ajusta el ancho del párrafo */
+}
+
+
+//Seccion Servicios
+.seccion-servicios {
+  background-color: #000;
+  color: white;
+}
+
+.servicio-cuadro {
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.servicio-cuadro img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: none;
+}
+
+.servicio-cuadro h5 {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.6);
+  margin: 0;
+  padding: 0.5rem;
+  font-size: 1.1rem;
+}
+
+/* Botones del carrusel bonitos */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #ffffff;
+  border-radius: 50%;
+  padding: 1rem;
+  background-size: 60% 60%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+//Seccion Nosotros
+.contacto-seccion {
+  background-color: #0a0f1c;
+}
+
+.footer-seccion {
+  background-color: #1557ff;
+}
+
+.campo-email {
+  background-color: #1c2331;
+  border: none;
+  color: white;
+  padding: 0.6rem 1rem;
+  border-radius: 0.4rem;
+}
+
+.campo-email::placeholder {
+  color: #aaa;
+}
+
+.boton-suscribir {
+  border-radius: 0.4rem;
+  font-weight: 600;
+  color: white;
+}
+
+.footer-link {
+  color: #aaa;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.footer-link:hover {
+  color: #00bfff;
+}
+
+
+//Seccion footer
+
+
+//Seccion chatbot
+.chatbot-icono {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.chatbot-ventana {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 320px;
+  border-radius: 0.5rem;
+
+}
+

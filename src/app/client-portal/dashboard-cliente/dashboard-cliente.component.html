@@ -1,0 +1,72 @@
+<header class="navbar-cliente">
+  <span class="empresa-nombre">Empresa de Soporte Técnico</span>
+
+  <div class="navbar-derecha">
+
+    <!-- Ícono profesional en SVG -->
+    <svg class="icono-usuario" width="28" height="28" viewBox="0 0 24 24" fill="white">
+      <path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v2h20v-2c0-3.3-6.7-5-10-5z"/>
+    </svg>
+
+    <div class="menu-container">
+      <button class="menu-toggle" (click)="mostrarMenu = !mostrarMenu">☰</button>
+
+      <nav class="menu-desplegado" *ngIf="mostrarMenu">
+        <ul>
+          <li class="menu-header"><a routerLink="/cliente/configuracion"> Configuración</a></li>
+          <li><a routerLink="/cliente/historial"> Historial de Servicios</a></li>
+          <li><a (click)="auth.logout()"> Cerrar Sesión</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<section class="cliente-dashboard">
+  <div class="dashboard-contenido">
+
+    <!-- Imagen con capa elegante -->
+    <div class="imagen-soporte">
+      <div class="overlay"></div>
+      <img 
+        src="https://tecnosoluciones.com/wp-content/uploads/2023/02/soporte-remoto.png" 
+        alt="Soporte técnico" 
+      />
+    </div>
+
+    <!-- Bloque derecho -->
+    <div class="bloque-derecho">
+
+      <div class="bienvenida">
+        <h2>Bienvenido, Alfonso</h2>
+        <p>Tu centro de servicios y asistencia técnica</p>
+      </div>
+
+      <div class="acciones-servicio">
+
+        <!-- Tarjeta con imagen ✨ -->
+        <div class="tarjeta-servicio">
+          <img src="https://cdn-icons-png.flaticon.com/512/3247/3247076.png" class="img-card">
+
+          <div class="card-info">
+            <h3>🔍 Diagnóstico de Equipo</h3>
+            <p>Revisión profesional para detectar fallas y optimizar tu equipo.</p>
+            <button routerLink="/cliente/servicio">Solicitar Diagnóstico</button>
+          </div>
+        </div>
+
+        <!-- Tarjeta con imagen ✨ -->
+        <div class="tarjeta-servicio">
+          <img src="https://cdn-icons-png.flaticon.com/512/3247/3247076.png" class="img-card">
+
+          <div class="card-info">
+            <h3>💻 Instalación de Software</h3>
+            <p>Instalación segura y certificada de tus aplicaciones.</p>
+            <button routerLink="/cliente/instalacion">Solicitar Instalación</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
