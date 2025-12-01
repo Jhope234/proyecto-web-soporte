@@ -1,3 +1,48 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Rajdhani:wght@500&family=Poppins:wght@500&display=swap" rel="stylesheet">
+
+<div class="layout">
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="sidebar">
+<h2 class="sidebar-logo">
+    <img src="assets\icono-iniciar-sesion.png">
+</h2>
+
+      <nav class="sidebar-menu">
+        <a routerLink="/cliente/dashboard"><i class="bi bi-house"></i> Inicio</a>
+        <a routerLink="/cliente/account"><i class="bi bi-gear"></i> Configuración</a>
+        <a routerLink="/cliente/historial"><i class="bi bi-clock-history"></i> Historial</a>
+        <a class="active" routerLink="/cliente/servicios"><i class="bi bi-calendar-check"></i> Servicios</a>
+              <a routerLink="/cliente/citas"><i class="bi bi-tools"></i> Citas</a>
+
+      </nav>
+  </aside>
+
+  <!-- ===== MAIN ===== -->
+  <main class="main">
+
+      <!-- TOPBAR -->
+<header class="topbar">
+  <div class="top-left">
+    <div class="search-box">
+  <i class="bi bi-search"></i>
+  <input placeholder="Buscar...">
+</div>
+
+
+  </div>
+
+  <div class="top-right">
+      <i class="bi bi-bell notify-icon"></i>
+
+      <span class="user-name">Nathan User</span>
+      <img class="user-avatar" src="https://cdn-icons-png.flaticon.com/512/847/847969.png">
+
+      <button class="logout-btn-icon"><i class="bi bi-box-arrow-right"></i></button>
+  </div>
+</header> 
+
 <div class="servicio-wrapper">
   <div class="servicio-formulario">
     <h2>Empresa de Soporte Técnico</h2>
@@ -8,92 +53,96 @@
         <div class="columna">
           <div class="campo">
             <label for="programa">Programa a Instalar</label>
-            <select id="programa">
-              <option value="">Seleccionar</option>
-              <option value="Office">Microsoft Office</option>
-              <option value="Antivirus">Antivirus</option>
-              <option value="Photoshop">Adobe Photoshop</option>
-              <option value="Zoom">Zoom</option>
-            </select>
+            <select [(ngModel)]="servicio.programa" (change)="actualizarPrecio()" name="programa">
+  <option value="">Seleccionar</option>
+  <optgroup label="Instalación">
+    <option *ngFor="let s of programasInstalacion" [value]="s.id_servicio">
+      {{ s.descripcion_servicio }}
+    </option>
+  </optgroup>
+  <optgroup label="Reparación">
+    <option *ngFor="let r of programasReparacion" [value]="r.id_servicio">
+      {{ r.descripcion_servicio }}
+    </option>
+  </optgroup>
+</select>
           </div>
 
           <div class="campo">
             <label for="precio">Precio</label>
-            <input type="text" id="precio" value="S/. 50.00" readonly />
-          </div>
+<!-- Precio -->
+<input type="text" [value]="'S/. ' + (servicio.precio || '0.00')" readonly />          </div>
 
           <div class="campo">
             <label for="nombres">Nombres</label>
-            <input type="text" id="nombres" placeholder="Ingresa tus nombres" />
+            <input type="text" id="nombres" [(ngModel)]="servicio.nombres" name="nombres" placeholder="Ingresa tus nombres" />
           </div>
 
           <div class="campo">
             <label for="apellidos">Apellidos</label>
-            <input type="text" id="apellidos" placeholder="Ingresa tus apellidos" />
+            <input type="text" id="apellidos" [(ngModel)]="servicio.apellidos" name="apellidos" placeholder="Ingresa tus apellidos" />
           </div>
 
           <div class="campo">
             <label for="dni">DNI/RUC <span class="opcional">(Autogenerado)</span></label>
-            <input type="text" id="dni" placeholder="Ej. 12345678" />
+            <input type="text" id="dni" [(ngModel)]="servicio.dni" name="dni" placeholder="Ej. 12345678" />
           </div>
         </div>
 
         <div class="columna">
           <div class="campo">
             <label for="modalidad">Modalidad</label>
-            <select id="modalidad">
-              <option value="">Seleccionar</option>
-              <option value="presencial">Presencial</option>
-              <option value="virtual">Virtual</option>
-            </select>
+           <!-- Modalidad -->
+<select [(ngModel)]="servicio.modalidad" name="modalidad">
+  <option value="">Seleccionar</option>
+  <option *ngFor="let m of modalidades" [value]="m.id_modalidad">{{ m.nombre_modalidad }}</option>
+</select>
           </div>
 
           <div class="campo">
             <label for="distrito">Distrito</label>
-            <select id="distrito">
-              <option value="">Seleccionar</option>
-              <option value="SJL">San Juan de Lurigancho</option>
-              <option value="Miraflores">Miraflores</option>
-              <option value="Surco">Surco</option>
-              <option value="Callao">Callao</option>
-            </select>
+            <!-- Distrito -->
+<select [(ngModel)]="servicio.distrito" (change)="actualizarPrecio()" name="distrito">
+  <option value="">Seleccionar</option>
+  <option *ngFor="let d of distritos" [value]="d.nombre_distrito">{{ d.nombre_distrito }}</option>
+</select>
           </div>
 
           <div class="campo">
             <label for="direccion">Dirección</label>
-            <input type="text" id="direccion" placeholder="Dirección completa" />
+            <input type="text" id="direccion" [(ngModel)]="servicio.direccion" name="direccion" placeholder="Dirección completa" />
           </div>
 
           <div class="campo">
             <label for="fecha">Fecha</label>
-            <input type="date" id="fecha" value="2025-11-05" />
+            <input type="date" id="fecha" [(ngModel)]="servicio.fecha" name="fecha" />
           </div>
 
           <div class="campo">
             <label for="hora">Hora</label>
-            <select id="hora">
-              <option value="">Seleccionar</option>
-              <option value="09:00">09:00 AM</option>
-              <option value="10:00">10:00 AM</option>
-              <option value="11:00">11:00 AM</option>
-              <option value="14:00">02:00 PM</option>
-              <option value="15:00">03:00 PM</option>
-            </select>
+            <!-- Hora -->
+<select [(ngModel)]="servicio.hora" name="hora">
+  <option value="">Seleccionar</option>
+  <option *ngFor="let h of horarios" [value]="h.id_horario">{{ h.horario }}</option>
+</select>
           </div>
         </div>
       </div>
 
       <div class="campo">
         <label for="comentario">Comentario</label>
-        <textarea id="comentario" rows="3" placeholder="Escribe algún detalle adicional..."></textarea>
+        <textarea id="comentario" [(ngModel)]="servicio.comentario" name="comentario" rows="3" placeholder="Escribe algún detalle adicional..."></textarea>
       </div>
 
       <div class="terminos">
-        <input type="checkbox" id="acepto" />
+        <input type="checkbox" id="acepto" [(ngModel)]="servicio.acepto" name="acepto" />
         <label for="acepto">Acepto los términos y condiciones</label>
       </div>
 
-      <button type="submit" class="btn-pagar">Pagar Servicio</button>
+<!-- Botón -->
+<button type="button" class="btn-pagar" [disabled]="!formularioValido()" (click)="registrarServicio()">
+  Pagar Servicio
+</button>
     </form>
   </div>
 </div>

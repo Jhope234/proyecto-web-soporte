@@ -8,6 +8,7 @@ import { AuthService } from 'src/app/auth/auth.service';
 })
 export class DashboardClienteComponent {
   mostrarMenu = false;
+  mostrarBuscador = false; // ✅ propiedad para controlar la lupa expandible
 
   constructor(public auth: AuthService) {}
 }

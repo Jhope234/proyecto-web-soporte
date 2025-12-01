@@ -1,3 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Historial de Servicios</title>
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Tipografías -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Rajdhani:wght@500&family=Poppins:wght@500&display=swap" rel="stylesheet">
+  <!-- Animaciones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="sidebar">
+    <h2 class="sidebar-logo">
+      <img src="assets/icono-iniciar-sesion.png">
+    </h2>
+    <nav class="sidebar-menu">
+      <a routerLink="/cliente/dashboard"><i class="bi bi-house"></i> Inicio</a>
+      <a routerLink="/cliente/account"><i class="bi bi-gear"></i> Configuración</a>
+      <a class="active" routerLink="/cliente/historial"><i class="bi bi-clock-history"></i> Historial</a>
+      <a routerLink="/cliente/servicios"><i class="bi bi-tools"></i> Servicios</a>
+      <a routerLink="/cliente/citas"><i class="bi bi-calendar-check"></i> Citas</a>
+    </nav>
+  </aside>
+
+  <!-- ===== MAIN ===== -->
+  <main class="main">
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+      <div class="top-left">
+        <div class="search-box">
+          <i class="bi bi-search"></i>
+          <input placeholder="Buscar...">
+        </div>
+      </div>
+      <div class="top-right d-flex align-items-center gap-3">
+        <i class="bi bi-bell notify-icon"></i>
+        <span class="user-name fw-bold">Nathan User</span>
+        <img class="user-avatar" src="https://cdn-icons-png.flaticon.com/512/847/847969.png">
+        <button class="logout-btn-icon btn btn-link text-danger fs-5"><i class="bi bi-box-arrow-right"></i></button>
+      </div>
+    </header>
+
+
+
 <div class="historial-wrapper">
   <h2>Empresa de Soporte Técnico</h2>
   <h3>Historial De Servicios Adquiridos</h3>

@@ -2,17 +2,13 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NavbarComponent } from './shared/navbar/navbar.component';
 import { SharedModule } from './shared/shared.module';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 // Interceptor versión Instalada
 import { AuthTokenInterceptor } from './auth/auth.interceptor';
 
-// Guard
-//
 // Componentes de autenticación
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
@@ -34,34 +30,33 @@ import { DashboardTecnicoComponent } from './client-portal/dashboard-tecnico/das
 
 @NgModule({
   declarations: [
-  AppComponent,
-  LoginComponent,
-  RegisterComponent,
-  DashboardComponent,
-  CitasComponent,
-  ServiciosComponent,
-  HistorialComponent,
-  AccountComponent,
-  DetalleServicioComponent,
-  InicioComponent,
-  AdminCitasComponent,
-  DashboardAdminComponent,      
-  DashboardClienteComponent,  
-  DashboardTecnicoComponent
-],
-imports: [
-  BrowserModule,
-  AppRoutingModule,
-  HttpClientModule,
-  FormsModule,
-  ReactiveFormsModule,
-  SharedModule // 👈 aquí sí va, pero en imports
-]
-,
+    AppComponent,
+    LoginComponent,
+    RegisterComponent,
+    DashboardComponent,
+    CitasComponent,
+    ServiciosComponent,
+    HistorialComponent,
+    AccountComponent,
+    DetalleServicioComponent,
+    InicioComponent,
+    AdminCitasComponent,
+    DashboardAdminComponent,      
+    DashboardClienteComponent,  
+    DashboardTecnicoComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,   // 👈 aquí ya está RouterModule.forRoot() con tus rutas
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    SharedModule
+  ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: AuthTokenInterceptor, // ← la versión correcta
+      useClass: AuthTokenInterceptor,
       multi: true
     }
   ],
